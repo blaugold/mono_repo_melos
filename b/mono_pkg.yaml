@@ -1,0 +1,19 @@
+sdk:
+  - stable
+
+stages:
+  - analyze:
+      - command:
+          - 'dart pub global activate melos'
+          - 'dart pub global run melos bootstrap --scope b'
+          - 'dart analyze'
+  - format:
+      - command:
+          - 'dart pub global activate melos'
+          - 'dart pub global run melos bootstrap --scope b'
+          - 'dart format --output=none --set-exit-if-changed .'
+  - test:
+      - command:
+          - 'dart pub global activate melos'
+          - 'dart pub global run melos bootstrap --scope b'
+          - 'flutter test'

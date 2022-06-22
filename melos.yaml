@@ -1,0 +1,12 @@
+name: mono_repo_melos
+
+packages:
+  - a
+  - b
+
+ide:
+  intellij: false
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
